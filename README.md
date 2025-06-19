@@ -16,7 +16,7 @@ Beberapa aplikasi/tools mini yang tersedia di dalam AppPages (contoh, tergantung
 - 📦 **Simple Inventory** – Catat item dan stok secara manual
 - 🔢 **Number Tools** – Alat bantu kalkulasi sederhana
 
-> 📌 *Silakan sesuaikan daftar ini berdasarkan isi aktual repositorimu.*
+> 📌 *or none.*
 
 ---
 
