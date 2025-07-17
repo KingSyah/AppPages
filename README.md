@@ -57,7 +57,6 @@ app-launcher/
 │   ├── index.html      # Button Editor interface
 │   ├── style.css       # Styling untuk tools
 │   └── script.js       # Logic untuk Button Editor
-├── Sampel-Menu/        # Referensi menu sampel
 └── README.md           # Dokumentasi ini
 ```
 
