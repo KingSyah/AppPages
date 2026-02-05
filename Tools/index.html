@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Editor - Tambah Tombol Menu</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚙️</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation">
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="bubble bubble-3"></div>
+        <div class="bubble bubble-4"></div>
+        <div class="bubble bubble-5"></div>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>⚙️ Button Editor</h1>
+        <p>Tambah tombol menu dengan mudah tanpa coding</p>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Form Section -->
+        <div class="form-section">
+            <h2>📝 Tambah Tombol Baru</h2>
+            <form id="buttonForm" class="button-form">
+                <div class="form-group">
+                    <label for="appName">Nama Aplikasi *</label>
+                    <input type="text" id="appName" placeholder="Contoh: Calculator" required>
+                    <small>Nama yang akan ditampilkan di tombol</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="appDescription">Deskripsi Aplikasi *</label>
+                    <input type="text" id="appDescription" placeholder="Contoh: Kalkulator untuk perhitungan" required>
+                    <small>Penjelasan singkat tentang aplikasi</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="appUrl">URL/Link Aplikasi *</label>
+                    <input type="url" id="appUrl" placeholder="https://example.com/app" required>
+                    <small>Link lengkap ke aplikasi (harus dimulai dengan https://)</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="appIcon">Icon Emoji</label>
+                    <input type="text" id="appIcon" placeholder="🧮" maxlength="2">
+                    <small>Pilih emoji yang sesuai (opsional, default: 📱)</small>
+                    <div class="emoji-picker">
+                        <span class="emoji-option" data-emoji="📱">📱</span>
+                        <span class="emoji-option" data-emoji="🧮">🧮</span>
+                        <span class="emoji-option" data-emoji="📊">📊</span>
+                        <span class="emoji-option" data-emoji="📝">📝</span>
+                        <span class="emoji-option" data-emoji="🎮">🎮</span>
+                        <span class="emoji-option" data-emoji="🛠️">🛠️</span>
+                        <span class="emoji-option" data-emoji="📖">📖</span>
+                        <span class="emoji-option" data-emoji="🔬">🔬</span>
+                        <span class="emoji-option" data-emoji="💰">💰</span>
+                        <span class="emoji-option" data-emoji="⏰">⏰</span>
+                        <span class="emoji-option" data-emoji="🎯">🎯</span>
+                        <span class="emoji-option" data-emoji="🚀">🚀</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="appCategory">Kategori</label>
+                    <select id="appCategory">
+                        <option value="aplikasi-umum">📱 Aplikasi Umum</option>
+                        <option value="tools">🛠️ Tools</option>
+                        <option value="aplikasi-eve">🚀 Aplikasi EVE</option>
+                        <option value="games">🎮 Games</option>
+                    </select>
+                    <small>Pilih kategori yang sesuai untuk tombol</small>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="previewBtn" class="btn btn-secondary">👁️ Preview</button>
+                    <button type="submit" class="btn btn-primary">✅ Generate Code</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Preview Section -->
+        <div class="preview-section">
+            <h2>👁️ Preview Tombol</h2>
+            <div class="preview-container">
+                <div id="buttonPreview" class="app-card compact">
+                    <div class="app-icon">📱</div>
+                    <div class="app-content">
+                        <div class="app-name">Nama Aplikasi</div>
+                        <div class="app-description">Deskripsi aplikasi akan muncul di sini</div>
+                    </div>
+                    <div class="app-arrow">›</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Section -->
+        <div class="result-section" id="resultSection" style="display: none;">
+            <h2>📋 Code HTML</h2>
+            <p class="instruction">Copy code di bawah ini dan paste ke file index.html di bagian kategori yang sesuai:</p>
+            
+            <div class="code-container">
+                <div class="code-header">
+                    <span>HTML Code</span>
+                    <button id="copyBtn" class="copy-btn">📋 Copy</button>
+                </div>
+                <pre id="generatedCode" class="code-block"></pre>
+            </div>
+
+            <div class="help-section">
+                <h3>📖 Cara Menggunakan:</h3>
+                <ol>
+                    <li>Copy code HTML di atas</li>
+                    <li>Buka file <code>index.html</code> di text editor</li>
+                    <li>Cari bagian kategori yang sesuai (contoh: <code>&lt;!-- Tools --&gt;</code>)</li>
+                    <li>Paste code di dalam <code>&lt;div class="app-grid compact-grid"&gt;</code></li>
+                    <li>Save file dan refresh browser</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2025 - Button Editor by KingSyah</p>
+        <p><a href="../index.html">← Kembali ke Menu Utama</a></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
