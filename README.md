@@ -1,6 +1,6 @@
 # 🚀 App Launcher
 
-Menu navigasi modern dengan tema langit berbintang yang responsif dan user-friendly, dilengkapi dengan tools untuk menambah tombol secara mandiri.
+Menu navigasi modern dengan tema cyberpunk yang responsif dan user-friendly, dilengkapi dengan tools untuk menambah tombol secara mandiri.
 
 ## ✨ Fitur Utama
 
