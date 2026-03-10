@@ -270,7 +270,7 @@ MIT License - Bebas digunakan dan dimodifikasi.
 
 ## 👨‍💻 Developer
 
-Dibuat oleh **KingSyah** dengan tema langit berbintang yang menggabungkan keindahan visual dan fungsionalitas modern.
+Dibuat oleh **KingSyah** dengan tema cyberpunk yang menggabungkan keindahan visual dan fungsionalitas modern.
 
 ### Changelog
 - **v2.0** - Button Editor Tools untuk user awam
