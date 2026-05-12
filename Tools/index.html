@@ -1,137 +1,113 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Button Editor - Tambah Tombol Menu</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚙️</text></svg>">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Button Editor</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Background Animation -->
-    <div class="bg-animation">
-        <div class="bubble bubble-1"></div>
-        <div class="bubble bubble-2"></div>
-        <div class="bubble bubble-3"></div>
-        <div class="bubble bubble-4"></div>
-        <div class="bubble bubble-5"></div>
+
+<canvas id="starfield"></canvas>
+
+<header>
+  <div>
+    <h1>⚙️ Button Editor</h1>
+    <p>Tambah tombol menu tanpa coding</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="section-label">Data Tombol</div>
+
+  <div class="field">
+    <label>Nama Aplikasi *</label>
+    <input type="text" id="appName" placeholder="Contoh: Kalkulator Kimia" oninput="updatePreview()">
+  </div>
+
+  <div class="field">
+    <label>Deskripsi Singkat *</label>
+    <input type="text" id="appDesc" placeholder="Contoh: Hitung molaritas dan konsentrasi" oninput="updatePreview()">
+  </div>
+
+  <div class="field">
+    <label>URL Aplikasi *</label>
+    <input type="url" id="appUrl" placeholder="https://..." oninput="updatePreview()">
+  </div>
+
+  <div class="field">
+    <label>Icon Emoji</label>
+    <div class="emoji-grid" id="emojiGrid"></div>
+    <div id="selectedEmoji"><span id="emojiDisplay">📱</span> <span id="emojiLabel">Pilih emoji di atas atau ketik di sini</span></div>
+    <input type="text" id="emojiCustom" placeholder="Ketik emoji custom..." maxlength="4" style="margin-top:6px;width:120px;" oninput="onCustomEmoji(this.value)">
+  </div>
+
+  <div class="field">
+    <label>Kategori</label>
+    <select id="appCat" onchange="updatePreview()">
+      <option value="🔬 Lab &amp; Inventaris">🔬 Lab &amp; Inventaris</option>
+      <option value="📂 Data &amp; Dokumen">📂 Data &amp; Dokumen</option>
+      <option value="🤖 AI &amp; Gambar">🤖 AI &amp; Gambar</option>
+      <option value="🧮 Kalkulator &amp; Konversi">🧮 Kalkulator &amp; Konversi</option>
+      <option value="🎨 Desain &amp; Kreasi">🎨 Desain &amp; Kreasi</option>
+      <option value="📱 Aplikasi Umum">📱 Aplikasi Umum</option>
+      <option value="🚀 Aplikasi EVE">🚀 Aplikasi EVE</option>
+      <option value="🎮 Games">🎮 Games</option>
+    </select>
+  </div>
+
+  <div class="section-label">Preview</div>
+  <div class="preview-card">
+    <div class="preview-emoji" id="prevEmoji">📱</div>
+    <div class="preview-info">
+      <div class="preview-name" id="prevName">Nama Aplikasi</div>
+      <div class="preview-desc" id="prevDesc">Deskripsi aplikasi</div>
+    </div>
+    <div class="preview-arrow">›</div>
+  </div>
+
+  <button class="btn-generate" onclick="generate()">✅ Generate Code</button>
+
+  <div id="outputSection" class="hidden">
+    <div class="section-label" style="margin-top:1.5rem;">Kode yang Dihasilkan</div>
+
+    <div class="output-box">
+      <div class="output-tabs">
+        <button class="tab-btn active" onclick="switchTab('js')">JS Object (Rekomendasi)</button>
+        <button class="tab-btn" onclick="switchTab('html')">HTML Lama</button>
+      </div>
+      <pre id="outputCode"></pre>
+      <div class="copy-row">
+        <button class="btn-copy" onclick="copyCode()" id="copyBtn">📋 Copy</button>
+      </div>
     </div>
 
-    <!-- Header -->
-    <div class="header">
-        <h1>⚙️ Button Editor</h1>
-        <p>Tambah tombol menu dengan mudah tanpa coding</p>
+    <div class="guide">
+      <h3>📖 Cara Memasukkan ke App Launcher</h3>
+      <div id="guideContent"></div>
     </div>
+  </div>
 
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Form Section -->
-        <div class="form-section">
-            <h2>📝 Tambah Tombol Baru</h2>
-            <form id="buttonForm" class="button-form">
-                <div class="form-group">
-                    <label for="appName">Nama Aplikasi *</label>
-                    <input type="text" id="appName" placeholder="Contoh: Calculator" required>
-                    <small>Nama yang akan ditampilkan di tombol</small>
-                </div>
+</div>
 
-                <div class="form-group">
-                    <label for="appDescription">Deskripsi Aplikasi *</label>
-                    <input type="text" id="appDescription" placeholder="Contoh: Kalkulator untuk perhitungan" required>
-                    <small>Penjelasan singkat tentang aplikasi</small>
-                </div>
+<!-- Copyright Footer -->
+<div class="footer">
+  <div class="footer-inner">
+    <span class="footer-icon">👑</span>
+    <span class="footer-text">© <span id="copyright-year"></span> KingSyah</span>
+    <span class="footer-icon">👑</span>
+  </div>
+  <nav class="footer-nav">
+    <a href="../index.html">⚡ App Launcher</a>
+    <a href="index.html" class="active">⚙️ Button Editor</a>
+  </nav>
+</div>
 
-                <div class="form-group">
-                    <label for="appUrl">URL/Link Aplikasi *</label>
-                    <input type="url" id="appUrl" placeholder="https://example.com/app" required>
-                    <small>Link lengkap ke aplikasi (harus dimulai dengan https://)</small>
-                </div>
-
-                <div class="form-group">
-                    <label for="appIcon">Icon Emoji</label>
-                    <input type="text" id="appIcon" placeholder="🧮" maxlength="2">
-                    <small>Pilih emoji yang sesuai (opsional, default: 📱)</small>
-                    <div class="emoji-picker">
-                        <span class="emoji-option" data-emoji="📱">📱</span>
-                        <span class="emoji-option" data-emoji="🧮">🧮</span>
-                        <span class="emoji-option" data-emoji="📊">📊</span>
-                        <span class="emoji-option" data-emoji="📝">📝</span>
-                        <span class="emoji-option" data-emoji="🎮">🎮</span>
-                        <span class="emoji-option" data-emoji="🛠️">🛠️</span>
-                        <span class="emoji-option" data-emoji="📖">📖</span>
-                        <span class="emoji-option" data-emoji="🔬">🔬</span>
-                        <span class="emoji-option" data-emoji="💰">💰</span>
-                        <span class="emoji-option" data-emoji="⏰">⏰</span>
-                        <span class="emoji-option" data-emoji="🎯">🎯</span>
-                        <span class="emoji-option" data-emoji="🚀">🚀</span>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="appCategory">Kategori</label>
-                    <select id="appCategory">
-                        <option value="aplikasi-umum">📱 Aplikasi Umum</option>
-                        <option value="tools">🛠️ Tools</option>
-                        <option value="aplikasi-eve">🚀 Aplikasi EVE</option>
-                        <option value="games">🎮 Games</option>
-                    </select>
-                    <small>Pilih kategori yang sesuai untuk tombol</small>
-                </div>
-
-                <div class="form-actions">
-                    <button type="button" id="previewBtn" class="btn btn-secondary">👁️ Preview</button>
-                    <button type="submit" class="btn btn-primary">✅ Generate Code</button>
-                </div>
-            </form>
-        </div>
-
-        <!-- Preview Section -->
-        <div class="preview-section">
-            <h2>👁️ Preview Tombol</h2>
-            <div class="preview-container">
-                <div id="buttonPreview" class="app-card compact">
-                    <div class="app-icon">📱</div>
-                    <div class="app-content">
-                        <div class="app-name">Nama Aplikasi</div>
-                        <div class="app-description">Deskripsi aplikasi akan muncul di sini</div>
-                    </div>
-                    <div class="app-arrow">›</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Result Section -->
-        <div class="result-section" id="resultSection" style="display: none;">
-            <h2>📋 Code HTML</h2>
-            <p class="instruction">Copy code di bawah ini dan paste ke file index.html di bagian kategori yang sesuai:</p>
-            
-            <div class="code-container">
-                <div class="code-header">
-                    <span>HTML Code</span>
-                    <button id="copyBtn" class="copy-btn">📋 Copy</button>
-                </div>
-                <pre id="generatedCode" class="code-block"></pre>
-            </div>
-
-            <div class="help-section">
-                <h3>📖 Cara Menggunakan:</h3>
-                <ol>
-                    <li>Copy code HTML di atas</li>
-                    <li>Buka file <code>index.html</code> di text editor</li>
-                    <li>Cari bagian kategori yang sesuai (contoh: <code>&lt;!-- Tools --&gt;</code>)</li>
-                    <li>Paste code di dalam <code>&lt;div class="app-grid compact-grid"&gt;</code></li>
-                    <li>Save file dan refresh browser</li>
-                </ol>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        <p>© 2025 - Button Editor by KingSyah</p>
-        <p><a href="../index.html">← Kembali ke Menu Utama</a></p>
-    </div>
-
-    <script src="script.js"></script>
+<script src="../starfield.js"></script>
+<script src="editor.js"></script>
 </body>
 </html>
