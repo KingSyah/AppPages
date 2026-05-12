@@ -6,9 +6,9 @@
 
 :root {
   --bg: #080b12;
-  --surface: #0e1219;
-  --surface2: #161c26;
-  --border: rgba(255,255,255,0.07);
+  --surface: #141a24;
+  --surface2: #1c2433;
+  --border: rgba(255,255,255,0.10);
   --text: #d8dde8;
   --muted: #52607a;
   --accent: #4a8fff;
@@ -16,14 +16,22 @@
   --success: #2ecc71;
 }
 
+html {
+  display: flex;
+  justify-content: center;
+}
+
 body {
   font-family: 'DM Sans', sans-serif;
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
+  width: 100%;
+  max-width: 400px;
+  overflow-x: hidden;
+  position: relative;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
 }
 
 /* ── Starfield Canvas ───────────────────────────────── */
@@ -39,11 +47,8 @@ body {
 header {
   position: relative;
   z-index: 1;
-  padding: 1.25rem 1rem 0.75rem;
+  padding: 1.25rem 16px 0.75rem;
   border-bottom: 1px solid var(--border);
-  max-width: 520px;
-  margin: 0 auto;
-  width: 100%;
 }
 
 header h1 { font-size: 16px; font-weight: 600; }
@@ -53,10 +58,7 @@ header p { font-size: 12px; color: var(--muted); }
 .container {
   position: relative;
   z-index: 1;
-  padding: 1rem;
-  max-width: 520px;
-  margin: 0 auto;
-  width: 100%;
+  padding: 12px 16px;
   flex: 1;
 }
 
