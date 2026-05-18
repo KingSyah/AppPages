@@ -47,7 +47,6 @@ const APPS = {
 
   "🎨 Desain & Kreasi": [
     { icon:"🎨", name:"Design Generator",   desc:"Temukan desain warna terbaik",               url:"https://desaingenerator.pages.dev/" },
-    { icon:"🎨", name:"Smart Color",        desc:"Temukan palet warna sempurna",               url:"https://kingsyah.github.io/scp/" },
     { icon:"🎨", name:"Design Coloring",    desc:"Design Ratio Analisis",                      url:"https://dkvb.pages.dev/" },
     { icon:"📜", name:"Katanja Djadoel",    desc:"Translator Bahasa Jadoel",                   url:"https://jadoel.pages.dev/" },
   ],
@@ -63,6 +62,7 @@ const APPS = {
     { icon:"🧮", name:"Kalkulator Yield",   desc:"Menghitung Yield Timer",                     url:"https://kingsyah.github.io/KalkulatorYield/" },
     { icon:"🚀", name:"Nebula Nexus",       desc:"Exploration & gas harvesting tools",         url:"https://kingsyah.github.io/exploNexus/" },
     { icon:"📝", name:"Patch Intel",        desc:"EVE Online patch notes categorizer",         url:"https://patch-intel.pages.dev/" },
+    { icon:"🎨", name:"Smart Color",        desc:"Temukan palet warna sempurna",               url:"https://kingsyah.github.io/scp/" },
     { icon:"🧮", name:"Kalkulator BuyBack", desc:"KingSyah Buyback Calculator",                url:"https://kingsyah-buyback.pages.dev/" },
   ],
 
