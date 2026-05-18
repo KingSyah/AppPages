@@ -1,4 +1,4 @@
-const CACHE_NAME = 'applauncher-v2';
+const CACHE_NAME = 'applauncher-v3';
 
 // Aset statis — aman di-cache lama (jarang berubah)
 const STATIC_ASSETS = [
