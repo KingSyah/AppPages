@@ -1,9 +1,10 @@
 const CACHE_NAME = 'applauncher-v2';
-const ASSETS = [
+
+// Aset statis — aman di-cache lama (jarang berubah)
+const STATIC_ASSETS = [
   './',
   './index.html',
   './style.css',
-  './app.js',
   './starfield.js',
   './favicon.svg',
   './manifest.json',
@@ -14,10 +15,15 @@ const ASSETS = [
   './Tools/editor.js'
 ];
 
-// Install — cache semua aset
+// File yang sering diubah — selalu ambil dari network dulu
+const NETWORK_FIRST = [
+  'app.js'
+];
+
+// Install — cache aset statis saja
 self.addEventListener('install', e => {
   e.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS))
+    caches.open(CACHE_NAME).then(cache => cache.addAll(STATIC_ASSETS))
   );
   self.skipWaiting();
 });
@@ -32,9 +38,26 @@ self.addEventListener('activate', e => {
   self.clients.claim();
 });
 
-// Fetch — cache first, fallback ke network
+// Fetch — Network First untuk app.js, Cache First untuk yang lain
 self.addEventListener('fetch', e => {
-  e.respondWith(
-    caches.match(e.request).then(cached => cached || fetch(e.request))
-  );
+  const url = new URL(e.request.url);
+  const isNetworkFirst = NETWORK_FIRST.some(name => url.pathname.endsWith('/' + name) || url.pathname.endsWith(name));
+
+  if (isNetworkFirst) {
+    // Network First: ambil dari server, update cache, fallback ke cache kalau offline
+    e.respondWith(
+      fetch(e.request)
+        .then(response => {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone));
+          return response;
+        })
+        .catch(() => caches.match(e.request))
+    );
+  } else {
+    // Cache First: untuk aset statis (gambar, CSS, dll)
+    e.respondWith(
+      caches.match(e.request).then(cached => cached || fetch(e.request))
+    );
+  }
 });
