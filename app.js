@@ -43,6 +43,7 @@ const APPS = {
     { icon:"📱", name:"Kalkulator Jamker",  desc:"Kalkulator jam kerja praktikum",             url:"https://kingsyah.github.io/KalkulatorJamker/" },
     { icon:"🧮", name:"Arcane Converter",   desc:"Fantasy measurement systems",                url:"https://arcane-converter.pages.dev/" },
     { icon:"📊", name:"Kalkulator Bisnis",  desc:"Menghitung BEP (Break Even Point)",          url:"https://kingsyah.github.io/kalbiz/" },
+     { icon:"📊", name:"Kalkulator UMKM",   desc:"Menghitung Modal & Keuntungan",              url:"https://kalkulator-umkm.pages.dev/" },
   ],
 
   "🎨 Desain & Kreasi": [
