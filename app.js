@@ -59,6 +59,7 @@ const APPS = {
 
   "🚀 Aplikasi EVE": [
     { icon:"⏰", name:"EVE Time Info",      desc:"EVE Online time tracker",                    url:"https://kingsyah.github.io/evetimeinfo/" },
+    { icon:"⏰", name:"EVE Time lite",      desc:"EVE Online time",                            url:"https://evetime.pages.dev/" },
     { icon:"💰", name:"ISK Tracker",        desc:"Track ISK earnings in EVE",                  url:"https://kingsyah.github.io/ISK-Tracker/" },
     { icon:"🧮", name:"Kalkulator Yield",   desc:"Menghitung Yield Timer",                     url:"https://kingsyah.github.io/KalkulatorYield/" },
     { icon:"🚀", name:"Nebula Nexus",       desc:"Exploration & gas harvesting tools",         url:"https://kingsyah.github.io/exploNexus/" },
