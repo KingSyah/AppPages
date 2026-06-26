@@ -1,10 +1,13 @@
-const CACHE_NAME = 'applauncher-v3';
+const CACHE_NAME = 'applauncher-v4';
 
 // Aset statis — aman di-cache lama (jarang berubah)
+// app.js disertakan di sini agar tombol langsung muncul dari cache (no delay)
+// Kalau ada update data APPS, cukup bump CACHE_NAME ke v5, v6, dst.
 const STATIC_ASSETS = [
   './',
   './index.html',
   './style.css',
+  './app.js',
   './starfield.js',
   './favicon.svg',
   './manifest.json',
@@ -15,10 +18,8 @@ const STATIC_ASSETS = [
   './Tools/editor.js'
 ];
 
-// File yang sering diubah — selalu ambil dari network dulu
-const NETWORK_FIRST = [
-  'app.js'
-];
+// Tidak ada file Network First lagi
+const NETWORK_FIRST = [];
 
 // Install — cache aset statis saja
 self.addEventListener('install', e => {
