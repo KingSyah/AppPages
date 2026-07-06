@@ -66,6 +66,7 @@ const APPS = {
     { icon:"📝", name:"Patch Intel",        desc:"EVE Online patch notes categorizer",         url:"https://patch-intel.pages.dev/" },
     { icon:"🎨", name:"Smart Color",        desc:"Temukan palet warna sempurna",               url:"https://kingsyah.github.io/scp/" },
     { icon:"🧮", name:"Kalkulator BuyBack", desc:"KingSyah Buyback Calculator",                url:"https://kingsyah-buyback.pages.dev/" },
+    { icon:"🗿", name:"NullClock",          desc:"Nullsec Clock",                              url:"https://nullclock.pages.dev/" },
   ],
 
   "🎮 Games": [
