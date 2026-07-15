@@ -19,6 +19,7 @@ const APPS = {
     { icon:"📦", name:"InvLab v2.1",        desc:"Managemen Barang Laboratorium v2.1",         url:"https://invlab.netlify.app/" },
     { icon:"📦", name:"InvLab v3.1",        desc:"Sistem Manajemen Inventaris",                url:"https://kingsyah.codeberg.page/invlab/" },
     { icon:"📡", name:"Kode Morse Transmitter",   desc:"Konversi teks menjadi Morse",          url:"https://morsend.pages.dev/" },
+    { icon:"📖", name:"Jamker",             desc:"Laboratory activity tracker",                url:"https://jamker.pages.dev/" },
   ],
 
   "📂 Data & Dokumen": [
