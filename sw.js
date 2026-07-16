@@ -1,4 +1,4 @@
-const CACHE_NAME = 'applauncher-v7';
+const CACHE_NAME = 'applauncher-v8';
 
 // Aset statis — aman di-cache lama (jarang berubah)
 // app.js disertakan di sini agar tombol langsung muncul dari cache (no delay)
