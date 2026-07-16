@@ -19,7 +19,7 @@ const APPS = {
     { icon:"📦", name:"InvLab v2.1",        desc:"Managemen Barang Laboratorium v2.1",         url:"https://invlab.netlify.app/" },
     { icon:"📦", name:"InvLab v3.1",        desc:"Sistem Manajemen Inventaris",                url:"https://kingsyah.codeberg.page/invlab/" },
     { icon:"📡", name:"Kode Morse Transmitter",   desc:"Konversi teks menjadi Morse",          url:"https://morsend.pages.dev/" },
-    { icon:"📖", name:"Jamker",             desc:"Laboratory activity tracker",                url:"https://jamker.pages.dev/" },
+    { icon:"📖", name:"Jamker",             desc:"ekinerja log calkulator",                    url:"https://jamker.pages.dev/" },
   ],
 
   "📂 Data & Dokumen": [
@@ -44,13 +44,14 @@ const APPS = {
     { icon:"📱", name:"Kalkulator Jamker",  desc:"Kalkulator jam kerja praktikum",             url:"https://kingsyah.github.io/KalkulatorJamker/" },
     { icon:"🧮", name:"Arcane Converter",   desc:"Fantasy measurement systems",                url:"https://arcane-converter.pages.dev/" },
     { icon:"📊", name:"Kalkulator Bisnis",  desc:"Menghitung BEP (Break Even Point)",          url:"https://kingsyah.github.io/kalbiz/" },
-     { icon:"📊", name:"Kalkulator UMKM",   desc:"Menghitung Modal & Keuntungan",              url:"https://kalkulator-umkm.pages.dev/" },
+    { icon:"📊", name:"Kalkulator UMKM",   desc:"Menghitung Modal & Keuntungan",               url:"https://kalkulator-umkm.pages.dev/" },
   ],
 
   "🎨 Desain & Kreasi": [
     { icon:"🎨", name:"Design Generator",   desc:"Temukan desain warna terbaik",               url:"https://desaingenerator.pages.dev/" },
     { icon:"🎨", name:"Design Coloring",    desc:"Design Ratio Analisis",                      url:"https://dkvb.pages.dev/" },
     { icon:"📜", name:"Katanja Djadoel",    desc:"Translator Bahasa Jadoel",                   url:"https://jadoel.pages.dev/" },
+    { icon:"🌐", name:"Alpha Translator",   desc:"Translator Bahasa Gen Alpha",                url:"https://alphatranslator.pages.dev/" },
   ],
 
   "📱 Aplikasi Umum": [
