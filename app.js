@@ -52,6 +52,7 @@ const APPS = {
     { icon:"🎨", name:"Design Coloring",    desc:"Design Ratio Analisis",                      url:"https://dkvb.pages.dev/" },
     { icon:"📜", name:"Katanja Djadoel",    desc:"Translator Bahasa Jadoel",                   url:"https://jadoel.pages.dev/" },
     { icon:"🌐", name:"Alpha Translator",   desc:"Translator Bahasa Gen Alpha",                url:"https://alphatranslator.pages.dev/" },
+    { icon:"🌐", name:"Truckun Generator",  desc:"Isekai Status Generator",                    url:"https://truckun.pages.dev/" },
   ],
 
   "📱 Aplikasi Umum": [
